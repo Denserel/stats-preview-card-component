@@ -46,6 +46,10 @@ section{
     justify-items: center;
 }
 
+footer{
+    display: grid;
+}
+
 h2{
     color: var(--white-colour);
 }
@@ -120,9 +124,12 @@ h2{
 }
 
 /* -------------- Frontend mentor Css ------------- */
-.attribution { 
-    font-size: 
-    11px; text-align: center; 
+.attribution {
+    position: absolute;
+    bottom: 0;
+    justify-self: center;
+    font-size: 11px; 
+    text-align: center; 
 }
 
 .attribution a { 
