@@ -1,0 +1,179 @@
+/* -------------- Google fonts -------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend&display=swap');
+
+/* -------------- Variables --------------- */
+:root{
+    /* ---------------- Colours -------------- */  
+    /* Base Colour */
+    --base-colour: 247;
+
+    /* HSL Colours */
+    --main-background-colour: hsl(var(--base-colour), 47%, 7%);
+    --card-background-colour: hsl(var(--base-colour), 40%, 17%);
+    --accent-colour: hsl(calc(var(--base-colour) + 30), 70%, 60%);
+    --accent-colour-a:hsla(calc(var(--base-colour) + 30), 70%, 30%, 0.6);
+    --white-colour: hsl(var(--base-colour), 0%, 100%);
+    --text-colour: hsla(var(--base-colour), 0%, 80%, 0.75);
+
+    /* ----------- Font and Typography ------------ */
+    --body-font: 'Inter', sans-serif;
+    --data-font: 'Lexend', sans-serif;
+    --normal-font-size: 0.9375rem;
+    --header-font-size: 1.5rem;
+}
+
+/* ------------- Base -------------- */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    color: var(--text-colour);
+    background: var(--main-background-colour);
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+section{
+    display: grid;
+    justify-items: center;
+}
+
+h2{
+    color: var(--white-colour);
+}
+
+/* --------------- Card css ------------------- */
+.card{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "p p"
+    "b b";
+    margin: 3rem 1.5rem;
+    max-width: 423px;
+    background: var(--card-background-colour);
+    border-radius: 0.5rem;
+}
+
+.card-header-img{
+    grid-area: p;
+    position: relative;
+    display: block;
+}
+
+.card-header-img img, .card-header-img::after{
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.card-header-img::after{
+    content: "";
+    position: absolute;
+    background: var(--accent-colour-a);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.card-header-img img{
+    display: block;
+}
+
+.card-body{
+    grid-area: b;
+    display: grid;
+    grid-row-gap: 2rem;
+    padding:  2rem;
+    text-align: center;
+}
+
+.card-body-heading{   
+    font-size: 1.7rem;
+    padding: 1rem 0;
+}
+
+.card-body-heading span{
+    color: var(--accent-colour);
+}
+
+.card-body-paragraph{
+    line-height: 1.5rem;
+}
+
+.card-data{
+    font-family: var(--data-font);
+    display: inline-block;
+}
+
+.card-data-paragraph{
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    padding-top: 0.4rem;
+}
+
+/* -------------- Frontend mentor Css ------------- */
+.attribution { 
+    font-size: 
+    11px; text-align: center; 
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+/* --------------- Media quarys ---------------- */
+
+@media only screen and (min-width: 815px){
+    
+    .card{
+        max-width: 1082px;
+        grid-template-areas: 
+        "b p";
+    }
+
+    .card-header-img img, .card-header-img::after{
+        border-radius: 0 0.5rem 0.5rem 0;
+    }
+
+    .card-body{
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        text-align: left;
+    }
+
+    .card-body-header{
+        grid-column: 1 / -1;
+    }
+
+    .card-body-heading{   
+        font-size: 1.7rem;
+        padding: 1rem 0;
+    }
+
+    .card-data{
+
+    }
+}
+
+@media only screen and (min-width: 1030px) {
+    .card-body{
+        padding: 4rem;
+    }
+
+    .card-body-header{
+        padding-right: 2rem;
+    }
+
+    .card-body-heading{
+        font-size: 2rem;
+    }
+}
+
